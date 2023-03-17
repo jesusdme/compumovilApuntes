@@ -32,7 +32,7 @@ Para tener objetos transparentes que se pueden poner uno encima de otro, ej una 
 	Para interpretar los datos que se necesite mostrar una pantalla
 
 11.	¿Qué clase contiene los identificadores de las vistas definidas en los layouts?
-La clase: R
+La clase: R 
 
 12.	¿Qué atributo se debe definir para cargar los valores de un spinner?
 Un array
