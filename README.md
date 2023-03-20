@@ -33,7 +33,7 @@ LinearLayout organiza los elementos en una dirección lineal (horizontal o verti
   Para tener objetos transparentes que se pueden poner uno encima de otro, ej una imagen encima de otro objeto
 
 - ¿Para qué sirve un adapter? <br>
-  Para interpretar los datos que se necesite mostrar una pantalla
+  el adapter sisrve para adaptar el contenido a diferentes tipos de patanllas/actividades
 
 - ¿Qué clase contiene los identificadores de las vistas definidas en los layouts? <br>
   La clase: R
