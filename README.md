@@ -1,4 +1,4 @@
-## Preguntas de QUICES
+## Preguntas de repaso
 
 - ¿Qué diferencia hay entre DPs, SPs y PX?
 
@@ -76,3 +76,70 @@ onRequiestPermisionResult
 - en lugar de startActivity(): Para actividades que se salen de la app ej: seleccionar foto
 ```
 startActivityForResult()
+```
+
+## Preguntas de repaso David
+
+- Ordene los diferentes LocationRequest que son usados para solicitar la posición del dispositivo del mas al menos exacto <br>
+       -1. PRIORITY_HIGH_ACCURACY <br>
+       -2. PRIORITY_BALANCED_POWER_ACCURACY <br>
+       -3. PRIORITY_LOW_POWER <br>
+       -4. PRIORITY_NO_POWER <br>
+- Para utilizar recursos con permisos de riesgo en Android se deben seguir los siguientes pasos: <br>
+      -1. Desde el manifest.xml definir los permisos a utilizar <br>
+      -2. Si el permiso no ha sido otorgado se puede solicitar el usuario el permiso utilizando la       función: ActivityCompat.requestPermissions(context, new String[]{permission},id); <br>
+      -3. Cuando se inicia una actividad se debe verificar si los permisos ya han sido otorgados previamente usando:  ContextCompat.checkSelfPermission(context, permission) ==PackageManager.PERMISSION_DENIED. <br>
+
+- Ordene los siguientes métodos del ciclo de vida de una actividad en Android: <br>
+   -1. onCreate() 
+   -2. onStart()
+   -3. onResume()
+   -4. onPause()
+   -5. onStop()
+   -6. onDestroy()
+- Un Framelayout tiene como función mostrar un solo elemento pero se pueden tener varios elementos, y estos se muestran uno sobre otro. <br>
+  Verdadero
+- ¿Si quiero posicionar los elementos de una interfaz relativos a otros elementos, que layout debo usar? <br>
+ constraint layout
+- Los DPs son utilizados para definir posiciones y espacios de los elementos en el layout de una actividad? <br>
+ Verdadero
+- ¿Para que se usa un LinearLayout? <br>
+  El LinearLayout organiza los elementos hijos en dirección vertical o horizontal.
+- Los Intent me permiten realizar las siguientes operaciones:
+1. Lanzar la cámara, galería del dispositivo <br>
+2. Hacer transición entre actividades <br>
+3. Lanzar actividades de otras aplicaciones instaladas en el dispositivo <br>
+
+- Un intent que sea definido como: Intent intent = new Intent(Intent.ACTION_PICK); Intent.setType(“image/*”); Me permite: <br>
+Abrir la app galería o gestor de archivos.
+- En un <TextView>, Cuáles son sus atributos obligatorios? <br>
+-android:layout_height_”wrap_content” <br>
+-android:textSize <br>
+-android:id=”@+id/text_view_id”  <br>
+-android:layout_width=”wrap_content” <br>
+
+- Los bundles son utilizados para el envío de información entre las actividades al momento de llamar el método onCreate() <br>
+Falso
+
+- Cuales de los siguientes permisos requieren autorización del usuario en tiempo de ejecución (es decir que son con riesgo)? <br>
+Almacenamiento <br>
+Internet <br>
+NFC <br>
+Localización <br>
+Bluetooth <br>
+Cámara <br>
+
+- De los siguientes elementos, cuál NO debe ubicarse en la carpeta de recursos de una aplicación? <br>
+Valores de arreglos de cadenas.
+
+- Cuando se hace una solicitud de localización y se usa el parámetro: PRIORITY_BALANCED_POWER_ACCURACY, Se está obligando al dispositivo a encender el GPS <br>
+Falso
+
+- La actividad principal de una aplicación se define en: <br>
+ manifest
+
+
+
+
+ 
+
