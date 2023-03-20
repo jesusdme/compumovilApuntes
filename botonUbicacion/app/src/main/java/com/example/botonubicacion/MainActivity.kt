@@ -3,6 +3,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.example.botonubicacion.databinding.ActivityMainBinding
@@ -22,10 +23,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-
-
-
+        //presionar boton
         binding.imageButton.setOnClickListener {
+            //si no tiene permiso preguntar
             if (ActivityCompat.checkSelfPermission(
                     this,
                     android.Manifest.permission.ACCESS_FINE_LOCATION
@@ -43,13 +43,15 @@ class MainActivity : AppCompatActivity() {
                     PERMISSIONS_REQUEST_ACCESS_LOCATION
                 )
 
-            } else {
+            }
+            else //si tiene permiso usar la ubicacion
+            {
 
                 mFusedLocationClient.lastLocation.addOnSuccessListener(this) { location ->
                     Log.i("LOCATION",
                         "onSuccess location")
                     if (location != null) {
-
+                        //enviar ubicacion
                         val intent = Intent(this, com.example.botonubicacion.location::class.java)
                         intent.putExtra("altitude",location.altitude.toString() )
                         intent.putExtra("latitude",location.latitude.toString() )
@@ -63,16 +65,18 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
-
+    //respuesta de permiso
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
         when (requestCode) {
             PERMISSIONS_REQUEST_ACCESS_LOCATION -> {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //si
                     binding.imageButton.callOnClick()
                 } else {
-                    Log.i("PERMISSIONS", "Location permission has been denied")
+                    //no
+                    Toast.makeText(this, "La aplicacion no funcionara bien sin el permiso", Toast.LENGTH_SHORT).show()
                 }
                 return
             }
