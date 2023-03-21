@@ -40,7 +40,10 @@ LinearLayout organiza los elementos en una dirección lineal (horizontal o verti
 
 - ¿Qué atributo se debe definir para cargar los valores de un spinner? <br>
   Un array
-
+  
+- Colocar margenes 
+  padding 
+  
 ## Apuntes Manifest (permisos)
 
 - A partir del 6 api 23 piden permisos CADA VEZ QUE SE EJECUTA
