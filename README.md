@@ -483,6 +483,30 @@ escuchar la ubicación si el usuario está viendo algo como un mapa y es
 consciente de su desplazamiento. <br>
 
 
+##dependencias
+
+En el archivo gradle del módulo de la aplicación agregar la dependencia a 
+todos los servicios de Google.
+
+##binding
+
+viewBinding: para crear un objeto que contiene todas las referencias de la
+vista, no se necesitan objetos adicionales
+Se necesita en el build Gradle del modulo de la app
+
+
+android { 
+viewBinding { 
+enabled = true 
+}
+
+PascalCase
+ResultProfileBinding
+
+De esta forma el binding identifica todos los objetos 
+
+binding.objeto.propiedadTexto="cambiar"
+
 
 
 
